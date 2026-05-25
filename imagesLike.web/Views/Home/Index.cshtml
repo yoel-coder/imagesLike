@@ -1,0 +1,53 @@
+﻿@Model ImageViewModel
+<body>
+    <header>
+        <nav b-gx69rlccnc="" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div b-gx69rlccnc="" class="container">
+                <a class="navbar-brand" href="/">ImageShareLikesEF.Web</a>
+                <button b-gx69rlccnc="" class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span b-gx69rlccnc="" class="navbar-toggler-icon"></span>
+                </button>
+                <div b-gx69rlccnc="" class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul b-gx69rlccnc="" class="navbar-nav flex-grow-1">
+                        <li b-gx69rlccnc="" class="nav-item">
+                            <a class="nav-link text-dark" href="/">Home</a>
+                        </li>
+                        <li b-gx69rlccnc="" class="nav-item">
+                            <a class="nav-link text-dark" href="/Home/Upload">Upload</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div b-gx69rlccnc="" class="container">
+        <main b-gx69rlccnc="" role="main" class="pb-3">
+
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                  
+                    </div>
+                   @foreach(var image in Model.images)
+                   {
+                    <div class="bg-light p-4 rounded shadow mb-3" style="margin-bottom: 20px; text-align: center;">
+                        <a href="/home/SingleImageView?id=@image.Id">
+                            <h3>@image.Title</h3>
+                            <h5>@image.uploadDate</h5>
+                            <img style="width: 400px;" src="/image/@image.imagePath">
+
+                        </a>
+                    </div>
+                   }
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js?v=BxFAw9RUJ1E4NycpKEjCNDeoSvr4RPHixdBq5wDnkeY"></script>
+
+
+
+</body>
